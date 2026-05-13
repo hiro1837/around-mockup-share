@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AROUND — Pattern B-dark / Cinematic Twilight</title>
+<meta name="description" content="三重県松阪市のエクステリア・外構デザイン。AROUND.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          canvas: '#14110D',
+          'canvas-soft': '#1F1B16',
+          'canvas-deep': '#0B0907',
+          ink: '#E8DFCB',
+          'ink-soft': '#CFC6B0',
+          bone: '#E8DFCB',
+          'bone-soft': '#CFC6B0',
+          amber: '#C4A572',
+          'amber-bright': '#D9BB85',
+          sage: '#6F7B68',
+          stone: '#98948A',
+          'stone-soft': '#6E6B62',
+          line: '#3A332A',
+        },
+        fontFamily: {
+          mincho: ['"Shippori Mincho B1"', 'serif'],
+          display: ['"Cormorant Garamond"', 'serif'],
+          sans: ['"Noto Sans JP"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root {
+    --canvas: #14110D;
+    --canvas-soft: #1F1B16;
+    --canvas-deep: #0B0907;
+    --ink: #E8DFCB;
+    --ink-soft: #CFC6B0;
+    --bone: #E8DFCB;
+    --bone-soft: #CFC6B0;
+    --amber: #C4A572;
+    --amber-bright: #D9BB85;
+    --sage: #6F7B68;
+    --stone: #98948A;
+    --stone-soft: #6E6B62;
+    --line: #3A332A;
+  }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { background: var(--canvas); color: var(--ink); scroll-behavior: smooth; overflow-x: hidden; scrollbar-gutter: stable; }
+  body { font-family: "Noto Sans JP", sans-serif; font-weight: 300; letter-spacing: 0.02em; line-height: 1.8; background: var(--canvas); color: var(--ink); overflow-x: hidden; max-width: 100%; }
+
+  .font-mincho { font-family: "Shippori Mincho B1", serif; }
+  .font-display { font-family: "Cormorant Garamond", serif; letter-spacing: 0.04em; }
+  .font-italic { font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.04em; }
+  .font-en-label { font-family: "Cormorant Garamond", serif; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 400; }
+  .vertical-rl { writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; }
+
+  .hairline { background: var(--line); height: 1px; width: 100%; }
+  .hairline-amber { background: var(--amber); height: 1px; width: 100%; opacity: 0.65; }
+  .hairline-bone { background: var(--bone); height: 1px; width: 100%; opacity: 0.5; }
+
+  /* reveal animation */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1.6s cubic-bezier(.22,.61,.36,1), transform 1.6s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .d-1 { transition-delay: 0.15s; }
+  .d-2 { transition-delay: 0.3s; }
+  .d-3 { transition-delay: 0.45s; }
+  .d-4 { transition-delay: 0.6s; }
+
+  /* image filter cinematic-warm for light theme */
+  .ph-img { filter: brightness(0.96) saturate(0.92) contrast(1.04); }
+  .ph-img-warm { filter: brightness(0.98) saturate(0.95) contrast(1.03) sepia(0.06); }
+
+  /* photo hover */
+  .photo-hover { overflow: hidden; }
+  .photo-hover .inner { transition: transform 2.4s cubic-bezier(.22,.61,.36,1), filter 1.2s ease; }
+  .photo-hover:hover .inner { transform: scale(1.06); filter: brightness(1) saturate(1) contrast(1.04); }
+
+  /* pill button */
+  .btn-line { display: inline-flex; align-items: center; gap: 16px; padding: 16px 32px; border: 1px solid currentColor; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; transition: background 0.6s ease, color 0.6s ease; font-family: "Cormorant Garamond", serif; }
+  .btn-line .arrow { display: inline-block; transition: transform 0.6s cubic-bezier(.22,.61,.36,1); }
+  .btn-line:hover { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+  .btn-line:hover .arrow { transform: translateX(10px); }
+  .btn-line.amber { color: var(--amber); border-color: var(--amber); }
+  .btn-line.amber:hover { background: var(--amber); color: var(--canvas); border-color: var(--amber); }
+  .btn-line.on-dark { color: var(--bone); border-color: var(--bone); }
+  .btn-line.on-dark:hover { background: var(--bone); color: var(--ink); }
+
+  /* hero video container */
+  .hero-video-wrap {
+    position: absolute; inset: 0;
+    overflow: hidden;
+    background-color: #1f2924;
+    background-image: linear-gradient(180deg, #1a221d 0%, #2a3d2f 100%);
+  }
+  .hero-clip {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1.4s cubic-bezier(.4,0,.2,1);
+    filter: brightness(0.58) saturate(1.05) contrast(1.05);
+  }
+  .hero-clip.active { opacity: 1; }
+  .hero-video-wrap::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at center, rgba(11,9,7,0.55) 0%, rgba(11,9,7,0.25) 55%, rgba(11,9,7,0) 100%),
+      linear-gradient(180deg, rgba(11,9,7,0.55) 0%, rgba(11,9,7,0.20) 35%, rgba(11,9,7,0.55) 70%, rgba(20,17,13,0.95) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .hero-text-shadow { text-shadow: 0 2px 20px rgba(0,0,0,0.55), 0 0 60px rgba(0,0,0,0.35); }
+  .hero-amber-shadow { text-shadow: 0 2px 18px rgba(0,0,0,0.6), 0 0 40px rgba(0,0,0,0.45); }
+
+  /* slow ken burns for fallback */
+  @keyframes kenBurns {
+    0% { transform: scale(1.02) translate(0,0); }
+    100% { transform: scale(1.12) translate(-1%,-1.5%); }
+  }
+  .ken-burns { animation: kenBurns 24s ease-in-out infinite alternate; }
+
+  /* scene indicator dots */
+  .scene-dots { position: absolute; bottom: 116px; left: 50%; transform: translateX(-50%); z-index: 11; display: flex; gap: 10px; }
+  .scene-dot { width: 28px; height: 1px; background: rgba(255,255,255,0.3); transition: background 0.6s ease; }
+  .scene-dot.on { background: var(--amber-bright); }
+
+  /* placeholder photo */
+  .photo {
+    background-color: #e8e3d5;
+    background-size: cover;
+    background-position: center;
+    display: block;
+  }
+
+  /* link underline */
+  .link-under { position: relative; display: inline-block; }
+  .link-under::after { content: ''; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px; background: currentColor; transform-origin: right; transform: scaleX(1); transition: transform 0.6s cubic-bezier(.22,.61,.36,1); }
+  .link-under:hover::after { transform-origin: left; transform: scaleX(0); animation: linkRedraw 1.4s cubic-bezier(.22,.61,.36,1) forwards; }
+  @keyframes linkRedraw { 50% { transform-origin: right; transform: scaleX(0); } 50.01% { transform-origin: left; transform: scaleX(0); } 100% { transform-origin: left; transform: scaleX(1); } }
+
+  /* scroll mark (light variant) */
+  .scroll-mark { position: relative; height: 80px; width: 1px; overflow: hidden; }
+  .scroll-mark::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 1px; background: rgba(255,255,255,0.25); }
+  .scroll-mark::after { content: ''; position: absolute; left: 0; top: 0; height: 60%; width: 1px; background: var(--amber-bright); animation: sLine 3s cubic-bezier(.55,0,.45,1) infinite; }
+  @keyframes sLine { 0% { transform: translateY(-100%); } 100% { transform: translateY(180%); } }
+
+  /* qmark */
+  .qmark { font-family: "Cormorant Garamond", serif; font-weight: 300; color: var(--amber); line-height: 0.8; opacity: 0.5; }
+
+  /* stars row — uniform spacing across all cards */
+  .stars-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 38px;
+    line-height: 1;
+    color: #FFC629;
+    text-shadow: 0 0 14px rgba(255,198,41,0.6), 0 0 30px rgba(255,198,41,0.35), 0 2px 4px rgba(0,0,0,0.08);
+  }
+  @media (min-width: 768px) {
+    .stars-row { font-size: 56px; gap: 0.55em; }
+  }
+  .stars-row > span { display: inline-block; }
+
+  /* nav */
+  .nav-bg { transition: background 0.6s ease, padding 0.4s ease; }
+  .nav-bg::before {
+    content: '';
+    position: absolute; inset: 0; bottom: auto; height: 180%;
+    background: linear-gradient(180deg, rgba(11,9,7,0.50) 0%, rgba(11,9,7,0.0) 100%);
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.6s ease;
+  }
+  .nav-scrolled { background: rgba(20,17,13,0.82); backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px); border-bottom: 1px solid var(--line); }
+  .nav-scrolled::before { opacity: 0; }
+  .nav-scrolled .nav-text-on-video { color: var(--bone) !important; }
+  .nav-scrolled .nav-text-on-video.amber { color: var(--amber) !important; border-color: var(--amber) !important; }
+  .nav-scrolled .nav-text-on-video.bone { color: var(--bone) !important; border-color: var(--bone) !important; }
+  .nav-text-shadow { text-shadow: 0 1px 12px rgba(0,0,0,0.6), 0 0 24px rgba(0,0,0,0.4); }
+
+  /* selection */
+  ::selection { background: var(--amber); color: var(--canvas); }
+
+  /* light grain (very subtle) */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+    z-index: 999;
+  }
+
+  @media (max-width: 768px) { .md-only { display: none; } }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- ========================================================= -->
+<!-- NAV -->
+<!-- ========================================================= -->
+<header id="nav" class="fixed top-0 left-0 right-0 z-40 nav-bg">
+  <div class="px-6 md:px-10 py-5 md:py-7 flex items-center justify-between relative">
+    <a href="#top" class="flex items-baseline gap-3 nav-text-shadow">
+      <span class="font-display text-xl md:text-[22px] tracking-[0.36em] font-medium nav-text-on-video" style="color:#FFFFFF;">AROUND</span>
+      <span class="font-italic text-[11px] hidden md:inline nav-text-on-video" style="color:#FFFFFF;">— Matsusaka, Mie</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9 text-[11px] font-en-label nav-text-shadow">
+      <a href="#philosophy" class="link-under nav-text-on-video" style="color:#FFFFFF;">Philosophy</a>
+      <a href="#strengths" class="link-under nav-text-on-video" style="color:#FFFFFF;">Why</a>
+      <a href="./works.html" class="link-under nav-text-on-video" style="color:#FFFFFF;">Works</a>
+      <a href="./people.html" class="link-under nav-text-on-video" style="color:#FFFFFF;">People</a>
+      <a href="./voice.html" class="link-under nav-text-on-video" style="color:#FFFFFF;">Voice</a>
+      <a href="./flow.html" class="link-under nav-text-on-video" style="color:#FFFFFF;">Flow</a>
+      <a href="#area" class="link-under nav-text-on-video" style="color:#FFFFFF;">Area</a>
+    </nav>
+    <a href="#contact" class="btn-line nav-text-shadow nav-text-on-video bone" style="color:#FFFFFF; border-color:#FFFFFF;">
+      <span class="font-en-label">無料相談</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</header>
+
+<!-- ========================================================= -->
+<!-- FV — Hero with Video Background (kept dark) -->
+<!-- ========================================================= -->
+<section id="top" class="relative h-screen min-h-[720px] w-full overflow-hidden bg-ink">
+
+  <div class="hero-video-wrap">
+    <div id="hero-fallback" class="absolute inset-0" style="
+      background: linear-gradient(180deg, #1a221d 0%, #2a3d2f 100%);
+      z-index: 0;
+    "></div>
+
+    <video class="hero-clip" data-clip="0" autoplay muted loop playsinline preload="auto">
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_2yMT3iS78h9HqbkfTNl4aoZenL7/hf_20260511_132719_c9c0de32-f93f-42a2-adc7-a49a4154be87.mp4" type="video/mp4">
+    </video>
+
+    <video class="hero-clip" data-clip="1" autoplay muted loop playsinline preload="auto">
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_2yMT3iS78h9HqbkfTNl4aoZenL7/hf_20260511_133541_5d45b724-c16e-4f3e-85e4-8c0b9cfce027.mp4" type="video/mp4">
+    </video>
+
+    <video class="hero-clip" data-clip="2" autoplay muted loop playsinline preload="auto">
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_2yMT3iS78h9HqbkfTNl4aoZenL7/hf_20260511_133547_80ef92bc-5070-4b1a-a08b-754615082ab2.mp4" type="video/mp4">
+    </video>
+
+    <video class="hero-clip" data-clip="3" autoplay muted loop playsinline preload="auto">
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_2yMT3iS78h9HqbkfTNl4aoZenL7/hf_20260511_135458_f5f83be3-d351-4690-b098-0ba0c3fe1221.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="scene-dots" aria-hidden="true">
+    <span class="scene-dot on" data-dot="0"></span>
+    <span class="scene-dot" data-dot="1"></span>
+    <span class="scene-dot" data-dot="2"></span>
+    <span class="scene-dot" data-dot="3"></span>
+  </div>
+
+  <!-- Top brand strip -->
+  <div class="absolute top-24 md:top-28 left-6 md:left-10 right-6 md:right-10 flex items-start justify-between z-10 text-bone">
+    <div>
+      <div class="font-en-label text-[10px] mb-2 text-amber-bright hero-amber-shadow">— Around / Edition Twilight</div>
+      <div class="hairline-bone w-12"></div>
+    </div>
+    <div class="md-only text-right">
+      <div class="font-en-label text-[10px] mb-2 hero-text-shadow">A Garden Tells A Story</div>
+      <div class="hairline-bone w-12 ml-auto"></div>
+    </div>
+  </div>
+
+  <!-- Vertical Japanese -->
+  <div class="md-only absolute top-1/2 left-8 -translate-y-1/2 text-bone z-10">
+    <div class="vertical-rl font-mincho text-[13px] tracking-[0.6em] hero-text-shadow">外と、内のあいだに</div>
+  </div>
+
+  <!-- Center title -->
+  <div class="relative h-full flex flex-col items-center justify-center text-center px-6 md:px-12 z-10">
+    <div class="font-en-label text-[10px] text-amber-bright mb-10 opacity-95 hero-amber-shadow">— A Promise from AROUND</div>
+    <h1 class="font-mincho text-[44px] sm:text-6xl md:text-8xl lg:text-[120px] leading-[1.12] font-normal text-bone tracking-[0.04em] max-w-6xl hero-text-shadow">
+      お客様の、<br><span class="font-italic font-light text-amber-bright hero-amber-shadow">— 未来を、つくる。</span>
+    </h1>
+    <div class="mt-12 max-w-xl mx-auto">
+      <div class="hairline-amber w-16 mx-auto mb-6" style="background:var(--amber-bright)"></div>
+      <p class="font-mincho text-sm md:text-base text-bone leading-relaxed hero-text-shadow">
+        around — 家のまわりから、<br class="md:hidden">誠意を込めて、ひとつひとつ。
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom band -->
+  <div class="absolute bottom-8 left-0 right-0 px-6 md:px-10 z-10 flex items-end justify-between text-bone">
+    <div class="font-en-label text-[10px] hero-text-shadow">
+      <div class="mb-1">Direction · AROUND Studio</div>
+      <div>Mie · Japan / 2026</div>
+    </div>
+    <div class="flex flex-col items-center gap-3">
+      <div class="font-en-label text-[10px] text-amber-bright hero-amber-shadow">scroll</div>
+      <div class="scroll-mark"></div>
+    </div>
+    <div class="font-en-label text-[10px] text-right md-only hero-text-shadow">
+      <div class="mb-1">Reel · 00 / 09</div>
+      <div>Hero · Twilight</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- PHILOSOPHY (light) -->
+<!-- ========================================================= -->
+<section id="philosophy" class="py-32 md:py-48 px-6 md:px-10 bg-canvas relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="reveal mb-24 md:mb-32 max-w-4xl">
+      <div class="font-en-label text-[10px] text-amber mb-6">— Chapter 01 / Philosophy</div>
+      <h2 class="font-mincho text-[32px] md:text-[56px] lg:text-[68px] leading-[1.3] font-light text-ink">
+        私たちは、<br>外を、つくらない。<br>
+        <span class="font-italic text-amber">— 暮らし</span>を、つくる。
+      </h2>
+      <p class="mt-10 max-w-xl text-sm md:text-base leading-loose text-stone">
+        [ ヒアリングで確認 ] 社長・スタッフが大切にしている世界観。<br>
+        外構という言葉では括れない、家のまわり・暮らしのまわりにある景色のこと。
+      </p>
+    </div>
+
+    <div class="reveal">
+      <div class="hairline-amber mb-16"></div>
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-x-6 gap-y-16">
+
+        <div class="group">
+          <div class="font-en-label text-[10px] text-amber mb-4">No. i</div>
+          <div class="font-mincho text-7xl md:text-[88px] mb-4 font-light leading-none text-ink">心</div>
+          <div class="font-italic text-stone text-sm mb-3">Kokoro · Heart</div>
+          <div class="text-[11px] leading-[1.9] text-stone-soft">まずお話を聴かせてください。デザインは、そのあとに。</div>
+        </div>
+
+        <div class="group">
+          <div class="font-en-label text-[10px] text-amber mb-4">No. ii</div>
+          <div class="font-mincho text-7xl md:text-[88px] mb-4 font-light leading-none text-ink">縁</div>
+          <div class="font-italic text-stone text-sm mb-3">En · Bond</div>
+          <div class="text-[11px] leading-[1.9] text-stone-soft">一度のお仕事を、十年のお付き合いに。</div>
+        </div>
+
+        <div class="group">
+          <div class="font-en-label text-[10px] text-amber mb-4">No. iii</div>
+          <div class="font-mincho text-7xl md:text-[88px] mb-4 font-light leading-none text-ink">守</div>
+          <div class="font-italic text-stone text-sm mb-3">Mamoru · Protect</div>
+          <div class="text-[11px] leading-[1.9] text-stone-soft">暮らしを、近隣を、地域を。まわりごと、丁寧に。</div>
+        </div>
+
+        <div class="group">
+          <div class="font-en-label text-[10px] text-amber mb-4">No. iv</div>
+          <div class="font-mincho text-7xl md:text-[88px] mb-4 font-light leading-none text-ink">育</div>
+          <div class="font-italic text-stone text-sm mb-3">Iku · Nurture</div>
+          <div class="text-[11px] leading-[1.9] text-stone-soft">庭は完成ではなく、はじまり。共に育てていく。</div>
+        </div>
+
+        <div class="group">
+          <div class="font-en-label text-[10px] text-amber mb-4">No. v</div>
+          <div class="font-mincho text-7xl md:text-[88px] mb-4 font-light leading-none text-ink">集</div>
+          <div class="font-italic text-stone text-sm mb-3">Tsudou · Gather</div>
+          <div class="text-[11px] leading-[1.9] text-stone-soft">人が、自然と集まりたくなる場所を。</div>
+        </div>
+
+        <div class="group">
+          <div class="font-en-label text-[10px] text-amber mb-4">No. vi</div>
+          <div class="font-mincho text-7xl md:text-[88px] mb-4 font-light leading-none text-ink">暮</div>
+          <div class="font-italic text-stone text-sm mb-3">Kurashi · Live</div>
+          <div class="text-[11px] leading-[1.9] text-stone-soft">見せる庭ではなく、毎日に寄り添う庭を。</div>
+        </div>
+
+      </div>
+      <div class="hairline-amber mt-16"></div>
+    </div>
+
+    <div class="mt-6 text-[10px] text-stone-soft italic font-display">— 六つの言葉は明日のヒアリングで around 様と磨いていきます / 仮置きです</div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- STRENGTHS -->
+<!-- ========================================================= -->
+<section id="strengths" class="py-32 md:py-48 px-6 md:px-10 bg-canvas-soft relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="reveal mb-24 md:mb-32 max-w-4xl">
+      <div class="font-en-label text-[10px] text-amber mb-6">— Chapter 02 / Why AROUND</div>
+      <h2 class="font-mincho text-[32px] md:text-[56px] lg:text-[68px] leading-[1.3] font-light text-ink">
+        言葉ではなく、<br>
+        <span class="font-italic text-amber">— 仕事</span>で、語らせて。
+      </h2>
+    </div>
+
+    <div class="space-y-20 md:space-y-32">
+
+      <div class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-end">
+        <div class="md:col-span-7">
+          <div class="font-en-label text-[12px] text-amber mb-6">i. — Site Beauty</div>
+          <h3 class="font-mincho text-[44px] md:text-[88px] lg:text-[110px] leading-[1.05] font-light text-ink">
+            現場が、<br>美しい。
+          </h3>
+        </div>
+        <div class="md:col-span-5">
+          <p class="text-[13px] md:text-sm leading-[2] text-ink-soft mb-10">
+            養生・整理・近隣への挨拶。工事中の現場でさえ、まるで完成しているかのように整っている。
+            お客様からよくいただく「現場が、めちゃくちゃ綺麗」という一言は、
+            「家のまわり」をつくる私たちが、いちばん大切にしてきた美意識のあらわれです。
+          </p>
+          <div class="flex items-baseline gap-5">
+            <div class="font-display text-amber text-7xl md:text-8xl font-light leading-none">60<span class="text-2xl text-stone ml-1">%</span></div>
+            <div class="text-[10px] text-stone leading-tight pb-2">
+              ご紹介からのご依頼比率<br>
+              <span class="font-en-label text-amber">— 現場を見た方からの紹介で</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hairline-amber"></div>
+
+      <div class="reveal grid md:grid-cols-12 gap-8 md:gap-12 items-end">
+        <div class="md:col-span-7">
+          <div class="font-en-label text-[12px] text-amber mb-6">ii. — Quick Response</div>
+          <h3 class="font-mincho text-[44px] md:text-[88px] lg:text-[110px] leading-[1.05] font-light text-ink">
+            対応が、<br>はやい。
+          </h3>
+        </div>
+        <div class="md:col-span-5">
+          <p class="text-[13px] md:text-sm leading-[2] text-ink-soft mb-10">
+            ご相談から最初のお返事まで、24時間以内を約束しています。
+            工事が終わったあとも、何かあればすぐに伺います。
+            「外構屋さんって連絡が遅いと聞いていたから」と言われるたび、この仕事を選んでよかったと思います。
+          </p>
+          <div class="flex items-baseline gap-5">
+            <div class="font-display text-amber text-7xl md:text-8xl font-light leading-none">24<span class="text-2xl text-stone ml-1">h以内</span></div>
+            <div class="text-[10px] text-stone leading-tight pb-2">
+              初回ご連絡 → 最初の返答まで<br>
+              <span class="font-en-label text-amber">— 工事後も同じスピードで</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- MID CTA -->
+<!-- ========================================================= -->
+<section class="py-20 md:py-28 px-6 md:px-10 bg-canvas-deep text-bone relative">
+  <div class="max-w-[1200px] mx-auto text-center">
+    <div class="reveal">
+      <div class="font-en-label text-[12px] text-amber-bright mb-6">— Free Consultation</div>
+      <h2 class="font-mincho text-[28px] md:text-5xl lg:text-6xl leading-[1.4] font-light mb-6">
+        まずは、お庭を、<br class="md:hidden">見せてください。
+      </h2>
+      <p class="font-mincho text-base md:text-lg text-bone-soft leading-[2] mb-12 max-w-2xl mx-auto">
+        ご相談・お見積もり、すべて無料です。<br>
+        24時間以内に、必ずお返事いたします。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+        <a href="#contact" class="btn-line on-dark" style="padding:18px 36px; font-size:12px;">
+          <span>ご予約はこちら</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#" class="btn-line on-dark" style="padding:18px 36px; font-size:12px; background:var(--amber); border-color:var(--amber); color:var(--canvas);">
+          <span>LINEはこちら</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- WORKS -->
+<!-- ========================================================= -->
+<section id="works" class="py-32 md:py-48 px-6 md:px-10 bg-canvas relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="reveal mb-24 md:mb-32 max-w-4xl">
+      <div class="font-en-label text-[10px] text-amber mb-6">— Chapter 03 / Works</div>
+      <h2 class="font-mincho text-[32px] md:text-[56px] lg:text-[68px] leading-[1.3] font-light text-ink">
+        一件、<br>
+        <span class="font-italic text-amber">— 一件</span>の、物語。
+      </h2>
+    </div>
+
+    <div class="space-y-16 md:space-y-24">
+
+      <!-- Row 1 : hero landscape -->
+      <div class="reveal">
+        <a href="#" class="block group">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[21/9] ph-img-warm" style="background-image:url('./works/case-01-mie-h1.png')"></div>
+          </div>
+          <div class="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div class="font-en-label text-[10px] text-amber mb-3">Case · 001 / Reel · 01</div>
+              <h3 class="font-mincho text-2xl md:text-3xl mb-2 leading-snug text-ink">光が、たまる入口。</h3>
+              <p class="text-[12px] text-stone">三重県 · H 様邸 · 新築一戸建て</p>
+            </div>
+            <div class="font-italic text-stone text-sm">view chapter →</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Row 2 : two landscapes -->
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+        <a href="#" class="group reveal">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[16/10] ph-img-warm" style="background-image:url('./works/case-02-aichi-d.png')"></div>
+          </div>
+          <div class="mt-6">
+            <div class="font-en-label text-[10px] text-amber mb-2">Case · 002</div>
+            <h3 class="font-mincho text-xl md:text-2xl mb-1 text-ink">ひと部屋ぶんの、外。</h3>
+            <p class="text-[12px] text-stone">愛知県 · D 様邸 · 新築平屋</p>
+          </div>
+        </a>
+        <a href="#" class="group reveal d-1">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[16/10] ph-img-warm" style="background-image:url('./works/case-03-mie-h2.png')"></div>
+          </div>
+          <div class="mt-6">
+            <div class="font-en-label text-[10px] text-amber mb-2">Case · 003</div>
+            <h3 class="font-mincho text-xl md:text-2xl mb-1 text-ink">車を、迎える場所。</h3>
+            <p class="text-[12px] text-stone">三重県 · H 様邸 · 新築一戸建て</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="mt-24 text-center reveal">
+      <a href="./works.html" class="btn-line amber">
+        <span>残り 3 件の事例を見る</span>
+        <span class="arrow">→</span>
+      </a>
+      <div class="mt-8 text-[10px] text-stone-soft italic font-display">— 施工事例写真は AI による完成イメージです / 本掲載時は各お客様の許諾を得て実写に置き換えます</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- PEOPLE -->
+<!-- ========================================================= -->
+<section id="people" class="py-32 md:py-48 px-6 md:px-10 bg-canvas-soft relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="reveal mb-24 md:mb-32 max-w-4xl">
+      <div class="font-en-label text-[10px] text-amber mb-6">— Chapter 04 / People</div>
+      <h2 class="font-mincho text-[32px] md:text-[56px] lg:text-[68px] leading-[1.3] font-light text-ink">
+        この仕事を、誰が、<br>
+        <span class="font-italic text-amber">— どうして</span>、やっているのか。
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-10 md:gap-20 mb-32 md:mb-44 items-stretch">
+      <div class="md:col-span-6 reveal">
+        <div class="photo-hover">
+          <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/founder.png'); background-position: center 20%;"></div>
+        </div>
+        <div class="mt-6 flex items-end justify-between">
+          <div>
+            <div class="font-en-label text-[10px] text-amber mb-2">— Founder / Representative</div>
+            <div class="font-mincho text-xl md:text-2xl text-ink mb-1">代表  長井 祐一</div>
+            <div class="font-italic text-stone text-sm">Yuichi Nagai · CEO</div>
+          </div>
+          <div class="font-en-label text-[10px] text-stone-soft">Reel · 04</div>
+        </div>
+      </div>
+      <div class="md:col-span-6 reveal d-1 flex flex-col justify-center">
+        <div class="qmark text-[160px] md:text-[200px] -mb-16 -ml-3">"</div>
+        <div class="font-mincho text-lg md:text-xl leading-[2.2] font-light text-ink mb-12 space-y-8">
+          <p class="font-mincho text-2xl md:text-3xl leading-[1.8] text-ink">私は、三重県で生まれ育ちました。</p>
+          <p>家を建てるとき、暮らしの「まわり」のこと — 外構、植栽、駐車スペース、土地の使い方 — は、お客様にとって、とても不安なものだと思います。<br>だから AROUND は、<strong class="text-ink font-mincho">一から、ぜんぶ、お任せいただける場所</strong>でありたい。仲間と一緒に、ひとつひとつ、誠意を込めて。</p>
+        </div>
+        <div class="hairline-amber w-20 mb-6"></div>
+        <div class="font-italic text-stone text-sm mb-4">— 株式会社 AROUND  代表</div>
+        <div class="mt-4">
+          <a href="./people.html#founder" class="link-under font-en-label text-[11px] text-amber">— 続きを読む（People ページへ）</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="flex items-baseline justify-between mb-12 md:mb-16">
+        <div>
+          <div class="font-en-label text-[12px] text-amber mb-3">— Members</div>
+          <h3 class="font-mincho text-2xl md:text-4xl font-light text-ink">仲間たち、4人。</h3>
+        </div>
+        <div class="font-italic text-stone text-sm hidden md:block max-w-xs text-right">綺麗な仕事を、ひとつひとつ。仲のいいチームです。</div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+        <div class="reveal">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/sato.png'); background-position: center 25%;"></div>
+          </div>
+          <div class="mt-4">
+            <div class="font-en-label text-[10px] text-amber mb-1">— Member · 経験 5年</div>
+            <div class="font-mincho text-base text-ink">佐藤</div>
+            <div class="font-italic text-stone text-[11px] mt-1">20代 / 綺麗な現場を心がけて</div>
+          </div>
+        </div>
+        <div class="reveal d-1">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/tanaka.png'); background-position: center 25%;"></div>
+          </div>
+          <div class="mt-4">
+            <div class="font-en-label text-[10px] text-amber mb-1">— Member · 経験 15年</div>
+            <div class="font-mincho text-base text-ink">田中</div>
+            <div class="font-italic text-stone text-[11px] mt-1">40代 / 綺麗な現場を心がけて</div>
+          </div>
+        </div>
+        <div class="reveal d-2">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/suzuki.png'); background-position: center 25%;"></div>
+          </div>
+          <div class="mt-4">
+            <div class="font-en-label text-[10px] text-amber mb-1">— Member · 経験 3年</div>
+            <div class="font-mincho text-base text-ink">鈴木</div>
+            <div class="font-italic text-stone text-[11px] mt-1">20代 / 綺麗な現場を心がけて</div>
+          </div>
+        </div>
+        <div class="reveal d-3">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/tamura.png'); background-position: center 25%;"></div>
+          </div>
+          <div class="mt-4">
+            <div class="font-en-label text-[10px] text-amber mb-1">— Member · 経験 10年</div>
+            <div class="font-mincho text-base text-ink">田村</div>
+            <div class="font-italic text-stone text-[11px] mt-1">30代 / 綺麗な現場を心がけて</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-[11px] text-stone-soft italic font-display">— 現場をともに支える4名のメンバーを紹介します</div>
+      <div class="mt-12 text-center">
+        <a href="./people.html" class="btn-line amber">
+          <span>People を詳しく見る</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- FLOW -->
+<!-- ========================================================= -->
+<section id="flow" class="py-32 md:py-48 px-6 md:px-10 bg-canvas relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="reveal mb-24 md:mb-32 max-w-4xl">
+      <div class="font-en-label text-[12px] text-amber mb-6">— Chapter 07 / Flow</div>
+      <h2 class="font-mincho text-[32px] md:text-[56px] lg:text-[68px] leading-[1.3] font-light text-ink">
+        施工の、<br>
+        <span class="font-italic text-amber">— 流れ。</span>
+      </h2>
+    </div>
+
+    <div class="space-y-0">
+
+      <!-- Phase 01 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">phase</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">01</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">出会い</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">お問い合わせ → ヒアリング・現地調査</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          LINE・Instagram・お電話、お好きな方法でお気軽に。「ちょっと聞きたい」レベルでも大歓迎です。<br>
+          その後、お客様のご希望をじっくりお伺いし、ご希望に応じて現地調査までお伺いします。
+        </div>
+      </div>
+
+      <!-- Phase 02 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">phase</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">02</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">設計</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">プランのご提案 → ご発注</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          現地調査をもとに、<strong class="text-ink">約1〜2週間</strong> でプランとお見積りをご用意。3Dパースで「完成後」をリアルにお見せします。<br>
+          納得いくまで何度でも調整し、ご納得いただけたらご発注へ。書類は弊社からご用意いたします。
+        </div>
+      </div>
+
+      <!-- Phase 03 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-y border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">phase</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">03</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">完成と、その先</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">施工 → ご請求 → アフターケア</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          施工中は <strong class="text-ink">LINEで写真付きの進捗報告</strong>。お立会いのもと完成を確認し、ご請求はメール送付・銀行振込で完結。<br>
+          施工後の小さなご相談やメンテナンスも、LINEで気軽にどうぞ。末永くお付き合いさせていただきます。
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-16 md:mt-20 text-center reveal">
+      <a href="./flow.html" class="btn-line amber">
+        <span>7ステップの詳細 ＆ よくある質問</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- AREA -->
+<!-- ========================================================= -->
+<section id="area" class="py-32 md:py-48 px-6 md:px-10 bg-canvas-soft relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="reveal mb-24 md:mb-32 max-w-4xl">
+      <div class="font-en-label text-[10px] text-amber mb-6">— Chapter 08 / Area</div>
+      <h2 class="font-mincho text-[32px] md:text-[56px] lg:text-[68px] leading-[1.3] font-light text-ink">
+        東海3県を、<br>
+        <span class="font-italic text-amber">— 中心</span>に。
+      </h2>
+    </div>
+
+    <div class="reveal">
+      <img src="./area/map.png" alt="東海3県すべて対応 — 岐阜・愛知・三重へ伺います" class="w-full h-auto block">
+    </div>
+
+    <div class="reveal d-1 mt-14 md:mt-20 max-w-4xl mx-auto text-center">
+      <p class="font-mincho text-xl md:text-3xl text-ink leading-[1.8] mb-8">
+        愛知県 ・ 三重県 ・ 岐阜県 —<br class="md:hidden">
+        <strong class="text-ink">東海3県</strong> 全般に伺います。
+      </p>
+      <div class="text-base md:text-lg text-ink-soft leading-[2.2] font-mincho mb-8">
+        地域に密着した、迅速・丁寧な対応を。
+      </div>
+      <div class="hairline-amber w-16 mx-auto mb-8"></div>
+      <p class="font-mincho text-base md:text-lg text-ink-soft leading-[2.2] max-w-2xl mx-auto">
+        東海3県以外のお客様も、ご相談を承ります。<br>
+        ご要望があれば、お気軽にお問い合わせください。
+      </p>
+      <div class="mt-6 text-[12px] md:text-[13px] text-stone-soft italic font-display">
+        — 遠方の場合は別途交通費をいただく場合がございます
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- CONTACT -->
+<!-- ========================================================= -->
+<section id="contact" class="py-32 md:py-48 px-6 md:px-10 bg-canvas relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="text-center reveal mb-20 md:mb-28">
+      <div class="font-en-label text-[10px] text-amber mb-8">— Chapter 09 / Contact</div>
+      <h2 class="font-mincho text-[36px] md:text-7xl lg:text-[100px] leading-[1.2] font-light mb-10 text-ink">
+        まずは、お庭を、<br>
+        <span class="font-italic text-amber">見せてください。</span>
+      </h2>
+      <div class="inline-flex items-center gap-5">
+        <div class="hairline-amber w-16"></div>
+        <p class="font-italic text-stone text-lg">— 無料現地相談、承っております</p>
+        <div class="hairline-amber w-16"></div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 md:gap-10 max-w-5xl mx-auto">
+
+      <div class="border border-line p-10 md:p-12 text-center reveal hover:border-amber transition-colors duration-700">
+        <div class="font-en-label text-[12px] text-amber mb-6">— Telephone</div>
+        <div class="font-display text-3xl md:text-4xl font-light mb-3 tracking-wide text-ink">0598-30-5033</div>
+        <div class="text-[12px] text-stone mb-8">8:00 – 17:00<br>定休日：日曜</div>
+        <a href="tel:0590000000" class="btn-line"><span>いますぐ電話</span><span class="arrow">→</span></a>
+      </div>
+
+      <div class="border border-amber p-10 md:p-12 text-center reveal d-1" style="background:rgba(196,165,114,0.08)">
+        <div class="font-en-label text-[10px] text-amber mb-6">— LINE / Recommended</div>
+        <div class="font-mincho text-xl md:text-2xl mb-4 leading-relaxed text-ink">気軽に、<br>まず一言から。</div>
+        <div class="text-[11px] text-stone mb-8">お写真を送るだけでもOK<br>24時間以内に必ずお返事します</div>
+        <a href="#" class="btn-line amber"><span>友だち追加</span><span class="arrow">→</span></a>
+      </div>
+
+      <div class="border border-line p-10 md:p-12 text-center reveal d-2 hover:border-amber transition-colors duration-700">
+        <div class="font-en-label text-[10px] text-amber mb-6">— Instagram</div>
+        <div class="font-mincho text-xl md:text-2xl mb-4 leading-relaxed text-ink">日々の現場、<br>ご覧ください。</div>
+        <div class="text-[11px] text-stone mb-8">@around_mie_119</div>
+        <a href="https://instagram.com/around_mie_119" target="_blank" rel="noopener" class="link-under font-en-label text-[10px] text-amber">— Follow on Instagram</a>
+      </div>
+
+    </div>
+
+    <!-- Business hours strip -->
+    <div class="mt-16 md:mt-20 max-w-3xl mx-auto reveal">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-10 text-center md:text-left border-y border-line py-8">
+        <div>
+          <div class="font-en-label text-[10px] text-amber mb-2">— Hours</div>
+          <div class="font-mincho text-base text-ink">8:00 – 17:00</div>
+        </div>
+        <div>
+          <div class="font-en-label text-[10px] text-amber mb-2">— Closed</div>
+          <div class="font-mincho text-base text-ink">日曜</div>
+        </div>
+        <div>
+          <div class="font-en-label text-[10px] text-amber mb-2">— Anytime</div>
+          <div class="font-mincho text-base text-ink">ご連絡は、いつでも</div>
+        </div>
+      </div>
+      <div class="mt-6 text-center text-[11px] text-stone leading-[2] font-mincho">
+        定休日や営業時間外にいただいたご連絡も、<br class="md:hidden"><strong class="text-ink">必ず24時間以内</strong>にお返事いたします。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- FOOTER — Dark for closing weight -->
+<!-- ========================================================= -->
+<footer class="bg-canvas-deep text-bone pt-24 md:pt-32 pb-10 px-6 md:px-10 relative">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="text-center mb-20 md:mb-32 reveal">
+      <div class="font-en-label text-[10px] text-amber-bright mb-6">— Direction & Construction</div>
+      <div class="font-display text-6xl md:text-9xl tracking-[0.32em] font-light text-bone">AROUND</div>
+      <div class="mt-8 font-italic text-bone-soft text-sm md:text-base">— A Garden Tells A Story</div>
+    </div>
+
+    <div class="hairline-amber mb-16"></div>
+
+    <div class="grid md:grid-cols-12 gap-12 mb-20">
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-5">— Studio</div>
+        <div class="text-sm leading-[2] text-bone-soft">
+          株式会社 AROUND<br>
+          〒515-2356<br>
+          三重県松阪市嬉野上野町 1183-1
+        </div>
+      </div>
+
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-5">— Chapters</div>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+          <a href="#philosophy" class="link-under text-bone-soft hover:text-bone">Philosophy</a>
+          <a href="#strengths" class="link-under text-bone-soft hover:text-bone">Why</a>
+          <a href="./works.html" class="link-under text-bone-soft hover:text-bone">Works</a>
+          <a href="./people.html" class="link-under text-bone-soft hover:text-bone">People</a>
+          <a href="./voice.html" class="link-under text-bone-soft hover:text-bone">Voice</a>
+          <a href="./flow.html" class="link-under text-bone-soft hover:text-bone">Flow</a>
+          <a href="#area" class="link-under text-bone-soft hover:text-bone">Area</a>
+        </div>
+      </div>
+
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-5">— Reel / Social</div>
+        <ul class="space-y-3 text-sm">
+          <li><a href="https://instagram.com/around_mie_119" target="_blank" rel="noopener" class="link-under text-bone-soft hover:text-bone">Instagram · @around_mie_119</a></li>
+          <li><a href="#" class="link-under text-bone-soft hover:text-bone">LINE Official</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hairline-bone mb-8"></div>
+
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 text-[10px] text-stone-soft font-en-label">
+      <div>© 2026 AROUND Inc. All rights reserved.</div>
+      <div>— Matsusaka, Mie, Japan / Edition Twilight</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Nav scrolled state
+  const nav = document.getElementById('nav');
+  const updateNav = () => {
+    if (window.scrollY > 80) nav.classList.add('nav-scrolled');
+    else nav.classList.remove('nav-scrolled');
+  };
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // Hero clip cycler — 5s per scene, crossfade
+  (function() {
+    const clips = Array.from(document.querySelectorAll('.hero-clip'));
+    const dots = Array.from(document.querySelectorAll('.scene-dot'));
+    const fallback = document.getElementById('hero-fallback');
+    const SCENE_MS = 5000;
+    if (!clips.length) return;
+    const ready = clips.filter(v => {
+      const s = v.querySelector('source');
+      return s && s.getAttribute('src');
+    });
+    if (!ready.length) return;
+    let i = 0;
+    ready[0].classList.add('active');
+    dots.forEach(d => d.classList.remove('on'));
+    if (dots[ready[0].dataset.clip]) dots[ready[0].dataset.clip].classList.add('on');
+    ready.forEach(v => v.addEventListener('loadeddata', () => {
+      if (fallback) { fallback.style.transition = 'opacity 1.4s ease'; fallback.style.opacity = '0'; }
+    }, { once: true }));
+    if (ready.length < 2) return;
+    setInterval(() => {
+      const cur = ready[i];
+      i = (i + 1) % ready.length;
+      const nxt = ready[i];
+      try { nxt.currentTime = 0; nxt.play(); } catch(e) {}
+      nxt.classList.add('active');
+      cur.classList.remove('active');
+      dots.forEach(d => d.classList.remove('on'));
+      const idx = nxt.dataset.clip;
+      if (dots[idx]) dots[idx].classList.add('on');
+    }, SCENE_MS);
+  })();
+</script>
+
+</body>
+</html>

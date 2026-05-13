@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>施工の流れ — AROUND</title>
+<meta name="description" content="株式会社AROUND の施工の流れ。ご相談から完成、アフターケアまでの7ステップ。">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          canvas: '#FFFFFF', 'canvas-soft': '#F7F4ED', 'canvas-deep': '#EFEADD',
+          ink: '#1A1A18', 'ink-soft': '#2C2A26',
+          bone: '#E8DFCB', 'bone-soft': '#CFC6B0',
+          amber: '#3F5840', 'amber-bright': '#95B089',
+          stone: '#6E6B62', 'stone-soft': '#98948A',
+          line: '#DDD6C5',
+        },
+        fontFamily: {
+          mincho: ['"Shippori Mincho B1"', 'serif'],
+          display: ['"Cormorant Garamond"', 'serif'],
+          sans: ['"Noto Sans JP"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root { --canvas: #FFFFFF; --canvas-soft: #F7F4ED; --canvas-deep: #EFEADD; --ink: #1A1A18; --ink-soft: #2C2A26; --bone: #E8DFCB; --bone-soft: #CFC6B0; --amber: #3F5840; --amber-bright: #95B089; --stone: #6E6B62; --stone-soft: #98948A; --line: #DDD6C5; }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { background: var(--canvas); color: var(--ink); scroll-behavior: smooth; overflow-x: hidden; scrollbar-gutter: stable; }
+  body { font-family: "Noto Sans JP", sans-serif; font-weight: 300; letter-spacing: 0.02em; line-height: 1.8; background: var(--canvas); color: var(--ink); overflow-x: hidden; max-width: 100%; }
+  .font-mincho { font-family: "Shippori Mincho B1", serif; }
+  .font-display { font-family: "Cormorant Garamond", serif; letter-spacing: 0.04em; }
+  .font-italic { font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.04em; }
+  .font-en-label { font-family: "Cormorant Garamond", serif; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 400; }
+  .hairline { background: var(--line); height: 1px; width: 100%; }
+  .hairline-amber { background: var(--amber); height: 1px; width: 100%; opacity: 0.65; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1.6s cubic-bezier(.22,.61,.36,1), transform 1.6s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .btn-line { display: inline-flex; align-items: center; gap: 16px; padding: 16px 32px; border: 1px solid currentColor; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; transition: background 0.6s ease, color 0.6s ease; font-family: "Cormorant Garamond", serif; }
+  .btn-line .arrow { display: inline-block; transition: transform 0.6s cubic-bezier(.22,.61,.36,1); }
+  .btn-line:hover { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+  .btn-line:hover .arrow { transform: translateX(10px); }
+  .btn-line.amber { color: var(--amber); border-color: var(--amber); }
+  .btn-line.amber:hover { background: var(--amber); color: var(--canvas); border-color: var(--amber); }
+  .btn-line.on-dark { color: var(--bone); border-color: var(--bone); }
+  .btn-line.on-dark:hover { background: var(--bone); color: var(--ink); }
+  .link-under { position: relative; display: inline-block; }
+  .link-under::after { content: ''; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px; background: currentColor; transform-origin: right; transform: scaleX(1); transition: transform 0.6s ease; }
+  .link-under:hover::after { transform-origin: left; transform: scaleX(0); animation: linkRedraw 1.4s ease forwards; }
+  @keyframes linkRedraw { 50% { transform-origin: right; transform: scaleX(0); } 50.01% { transform-origin: left; transform: scaleX(0); } 100% { transform-origin: left; transform: scaleX(1); } }
+  .nav-solid { background: rgba(255,255,255,0.92); backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px); border-bottom: 1px solid var(--line); }
+  ::selection { background: var(--amber); color: var(--canvas); }
+  body::before { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: 0.02; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: multiply; z-index: 999; }
+  details summary { cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  details[open] summary .faq-toggle { transform: rotate(45deg); }
+  .faq-toggle { display: inline-block; transition: transform 0.4s ease; font-family: "Courier New", monospace; font-size: 18px; line-height: 1; }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-40 nav-solid">
+  <div class="px-6 md:px-10 py-5 md:py-6 flex items-center justify-between">
+    <a href="./index-b.html" class="flex items-baseline gap-3">
+      <span class="font-display text-xl md:text-[22px] tracking-[0.36em] font-medium text-ink">AROUND</span>
+      <span class="font-italic text-[11px] text-stone hidden md:inline">— Matsusaka, Mie</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9 text-[11px] font-en-label">
+      <a href="./index-b.html#philosophy" class="link-under text-ink">Philosophy</a>
+      <a href="./works.html" class="link-under text-ink">Works</a>
+      <a href="./people.html" class="link-under text-ink">People</a>
+      <a href="./voice.html" class="link-under text-ink">Voice</a>
+      <a href="./flow.html" class="link-under text-amber font-medium">Flow</a>
+      <a href="./index-b.html#area" class="link-under text-ink">Area</a>
+      <a href="./index-b.html#contact" class="link-under text-ink">Contact</a>
+    </nav>
+    <a href="./index-b.html#contact" class="btn-line amber">
+      <span class="font-en-label">無料相談</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-10 bg-canvas">
+  <div class="max-w-[1500px] mx-auto">
+    <div class="reveal max-w-4xl">
+      <div class="font-en-label text-[12px] text-amber mb-6">— Flow / 施工の流れ</div>
+      <h1 class="font-mincho text-[40px] md:text-[64px] lg:text-[80px] leading-[1.25] font-light text-ink">
+        施工の、<br>
+        <span class="font-italic text-amber">— 流れ。</span>
+      </h1>
+      <p class="mt-8 max-w-2xl text-base md:text-lg leading-[2] text-ink-soft">
+        ご相談から完成、そのあとのアフターケアまで。<br>
+        7つのステップで、ひとつひとつ、誠意を込めて。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 STEPS -->
+<section class="pb-32 md:pb-48 px-6 md:px-10 bg-canvas">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="space-y-0">
+
+      <!-- Step 01 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">step</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">01</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">お問い合わせ</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">LINE・Instagram・メール・お電話、お好きな方法でお気軽に</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          「ちょっと聞いてみたいな」レベルでも大歓迎です。<br>
+          LINEなら現場の写真を送っていただくだけで、ざっくりとしたイメージや概算をお伝えできることも。<br>
+          Instagramの施工事例を見て「これいいな」と思ったらDMからそのままご相談いただいてもOKです。<br>
+          お電話・メールフォームももちろん対応しています。
+          <div class="mt-5"><a href="#faq" class="link-under font-en-label text-[12px] text-amber">— よくあるご質問はこちら</a></div>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">step</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">02</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">ヒアリング・現地調査</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">オンライン打ち合わせも可能。ご都合に合わせて柔軟に</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          まずはお客様のご希望をじっくりお伺いします。<br>
+          「Pinterestで集めた画像を見せたい」「ZoomやLINEビデオで話したい」「土日しか時間が取れない」など、ライフスタイルに合わせて対応しますのでご相談ください。<br><br>
+          その後、ご希望のお客様には現地調査にお伺いします。日当たり・隣地・周辺環境などを細かくチェックし、お客様の「こうしたい」を実現するための情報を集めます。<br><br>
+          打ち合わせの際に <strong class="text-ink">配置図・建物平面図・立面図</strong>（PDFやスマホで撮った写真でも大丈夫です）をご用意いただけるとスムーズです。
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">step</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">03</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">プランのご提案</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">3Dパースで「完成後」がリアルに見えるご提案を</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          現地調査をもとに、<strong class="text-ink">約1〜2週間</strong> でプランとお見積りをご用意します。<br>
+          図面だけでなく、3Dパースやイメージ画像も使いながら「完成したらこう見えますよ」というのを具体的にお見せするのがこだわり。<br><br>
+          ご提案はオンラインでも対面でもOK。気になるところ、変更したいところは遠慮なく教えてください。<strong class="text-ink">納得いくまで何度でも調整</strong> します。
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">step</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">04</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">ご発注</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">必要な書類は弊社よりご用意いたします</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          ご納得いただけたらご発注のご連絡を。<br>
+          申込書類は弊社で作成のうえ、お渡しまたは郵送にてお届けいたします。<br>
+          ご署名・ご捺印いただきましたら、弊社担当者にお渡しください。
+        </div>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">step</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">05</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">施工</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">プロのスタッフが責任を持って施工。進捗もこまめにご報告</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          ご発注後、<strong class="text-ink">約1週間</strong> ほどで工事日程を確定します（資材の納期や季節により変動あり）。<br><br>
+          工事開始時には、プラン内容と工程の最終確認をお客様とご一緒に。<br>
+          工事中の進捗は <strong class="text-ink">LINEなどで写真付きでご報告</strong> することも可能です（ご希望の方）。お仕事などで現場に立ち会えない方にも安心していただけるよう、見えない部分こそ丁寧にお伝えします。<br><br>
+          完了時にはお客様お立会いのもと、仕上がりを一緒にご確認いたします。
+        </div>
+      </div>
+
+      <!-- Step 06 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-t border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">step</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">06</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">ご請求・お支払い</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">メール送付・銀行振込で完結</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          工事完了確認後、ご請求書をメールまたは郵送でお送りします。<br>
+          完了後 <strong class="text-ink">7日以内</strong> に弊社指定口座へお振込みをお願いいたします。
+        </div>
+      </div>
+
+      <!-- Step 07 -->
+      <div class="grid md:grid-cols-12 gap-6 md:gap-10 py-12 md:py-16 border-y border-line reveal items-start">
+        <div class="md:col-span-2">
+          <div class="font-italic text-amber text-sm">step</div>
+          <div class="font-display text-6xl md:text-7xl font-light leading-none mt-2 text-ink">07</div>
+        </div>
+        <div class="md:col-span-3">
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">アフターケア</h3>
+          <p class="text-[14px] md:text-base text-amber font-mincho leading-[1.9]">作って終わり、ではありません</p>
+        </div>
+        <div class="md:col-span-7 text-[14px] md:text-base leading-[2.1] text-ink-soft">
+          施工後の小さなお悩みやメンテナンスのご相談も、<strong class="text-ink">LINEで気軽に</strong> どうぞ。<br>
+          植栽の手入れ時期のお知らせなど、末永くお付き合いさせていただけたら嬉しいです。
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ LINK -->
+<section class="py-20 md:py-28 px-6 md:px-10 bg-canvas-soft">
+  <div class="max-w-[1100px] mx-auto text-center reveal">
+    <div class="font-en-label text-[12px] text-amber mb-4">— FAQ</div>
+    <h2 class="font-mincho text-[22px] md:text-3xl leading-[1.4] font-light text-ink mb-8">よくあるご質問は、こちらから。</h2>
+    <a href="./faq.html" class="btn-line amber" style="padding:16px 32px; font-size:11px;">
+      <span>FAQ を見る</span><span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 md:py-28 px-6 md:px-10 bg-ink text-bone">
+  <div class="max-w-[1200px] mx-auto text-center">
+    <div class="reveal">
+      <div class="font-en-label text-[12px] text-amber-bright mb-6">— Free Consultation</div>
+      <h2 class="font-mincho text-[28px] md:text-4xl lg:text-5xl leading-[1.4] font-light text-bone mb-6">
+        まずは、お庭を、<br class="md:hidden">見せてください。
+      </h2>
+      <p class="font-mincho text-base md:text-lg text-bone-soft leading-[2] mb-12 max-w-2xl mx-auto">
+        ご相談・お見積もり、すべて無料です。<br>
+        24時間以内に、必ずお返事いたします。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+        <a href="./index-b.html#contact" class="btn-line on-dark" style="padding:18px 36px; font-size:12px;">
+          <span>ご予約はこちら</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#" class="btn-line on-dark" style="padding:18px 36px; font-size:12px; background:var(--amber); border-color:var(--amber); color:var(--canvas);">
+          <span>LINEはこちら</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-bone pt-24 md:pt-28 pb-10 px-6 md:px-10">
+  <div class="max-w-[1500px] mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="font-en-label text-[10px] text-amber-bright mb-6">— Around / Matsusaka, Mie</div>
+      <div class="font-display text-5xl md:text-7xl tracking-[0.32em] font-light text-bone">AROUND</div>
+    </div>
+    <div class="hairline-amber mb-12"></div>
+    <div class="grid md:grid-cols-12 gap-10 mb-16">
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-4">— Studio</div>
+        <div class="text-sm leading-[2] text-bone-soft">
+          株式会社 AROUND<br>
+          〒515-2356 三重県松阪市嬉野上野町 1183-1<br>
+          TEL: 0598-30-5033<br>
+          8:00 – 17:00 / 日曜定休
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-4">— Navigate</div>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+          <a href="./index-b.html" class="link-under text-bone-soft hover:text-bone">Top</a>
+          <a href="./works.html" class="link-under text-bone-soft hover:text-bone">Works</a>
+          <a href="./people.html" class="link-under text-bone-soft hover:text-bone">People</a>
+          <a href="./voice.html" class="link-under text-bone-soft hover:text-bone">Voice</a>
+          <a href="./flow.html" class="link-under text-bone-soft hover:text-bone">Flow</a>
+          <a href="./index-b.html#area" class="link-under text-bone-soft hover:text-bone">Area</a>
+          <a href="./index-b.html#contact" class="link-under text-bone-soft hover:text-bone">Contact</a>
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-4">— Social</div>
+        <ul class="space-y-3 text-sm">
+          <li><a href="https://instagram.com/around_mie_119" target="_blank" rel="noopener" class="link-under text-bone-soft hover:text-bone">Instagram · @around_mie_119</a></li>
+          <li><a href="#" class="link-under text-bone-soft hover:text-bone">LINE Official</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hairline mb-6" style="background:rgba(232,223,203,0.2)"></div>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 text-[10px] text-stone-soft font-en-label">
+      <div>© 2026 AROUND Inc. All rights reserved.</div>
+      <div>— Matsusaka, Mie, Japan</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

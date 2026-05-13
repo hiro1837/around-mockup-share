@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>around様 HP モック / 3パターン一覧</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --canvas: #FAF7F0;
+    --canvas-soft: #F2EEE2;
+    --ink: #1A1A18;
+    --stone: #6E6B62;
+    --stone-soft: #98948A;
+    --amber: #B0884F;
+    --line: #DDD6C5;
+  }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { font-family: "Noto Sans JP", sans-serif; font-weight: 300; letter-spacing: 0.02em; line-height: 1.8; background: var(--canvas); color: var(--ink); margin: 0; }
+  .font-mincho { font-family: "Shippori Mincho B1", serif; }
+  .font-display { font-family: "Cormorant Garamond", serif; letter-spacing: 0.04em; }
+  .font-italic { font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.04em; }
+  .font-en-label { font-family: "Cormorant Garamond", serif; letter-spacing: 0.32em; text-transform: uppercase; }
+
+  .card { transition: transform 0.7s cubic-bezier(.22,.61,.36,1), box-shadow 0.7s ease; }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -20px rgba(20,20,18,0.18); }
+  .card iframe { pointer-events: none; }
+
+  .btn { display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border: 1px solid currentColor; border-radius: 999px; font-family: "Cormorant Garamond", serif; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; transition: background 0.5s ease, color 0.5s ease; }
+  .btn .arrow { transition: transform 0.4s ease; }
+  .btn:hover { background: var(--ink); color: var(--canvas); }
+  .btn:hover .arrow { transform: translateX(6px); }
+  .btn.amber { color: var(--amber); border-color: var(--amber); }
+  .btn.amber:hover { background: var(--amber); color: var(--canvas); }
+</style>
+</head>
+<body>
+
+<header class="px-8 md:px-14 pt-16 md:pt-24 pb-10 max-w-[1500px] mx-auto">
+  <div class="font-en-label text-[10px] text-stone mb-4">— around様 HP / Mockups</div>
+  <h1 class="font-mincho text-3xl md:text-5xl font-light leading-[1.4] mb-6">
+    3つの方向性、見比べてください。
+  </h1>
+  <p class="max-w-2xl text-sm md:text-base leading-loose text-stone">
+    内容はすべて仮置き（明日のヒアリングで埋めます）。<br>
+    まずは <span class="font-italic">空気感・デザインの方向性</span> がどれが近いかを見ていただくためのものです。
+  </p>
+  <div class="mt-6 text-[11px] text-stone-soft italic font-display">
+    各カードをクリックすると、別タブで実物が開きます。
+  </div>
+</header>
+
+<main class="px-8 md:px-14 pb-24 max-w-[1500px] mx-auto">
+  <div class="grid md:grid-cols-3 gap-8 md:gap-10">
+
+    <!-- Pattern A -->
+    <a href="index.html" target="_blank" class="card block bg-white border" style="border-color:var(--line)">
+      <div class="aspect-[4/3] overflow-hidden relative bg-[#EBE6D8]">
+        <iframe src="index.html" class="w-[200%] h-[200%] origin-top-left" style="transform:scale(0.5); border:0;" loading="lazy" sandbox="allow-same-origin"></iframe>
+      </div>
+      <div class="p-7 md:p-9">
+        <div class="font-en-label text-[10px] text-stone mb-3">— Pattern A</div>
+        <h2 class="font-mincho text-xl md:text-2xl mb-4 leading-snug">
+          Editorial Stillness<br><span class="font-italic text-sm text-stone">— 編集的な静けさ</span>
+        </h2>
+        <ul class="text-xs leading-[2] text-stone mb-6">
+          <li>· ベース：クリーム（#F4F1EA）</li>
+          <li>· アクセント：深いフォレストグリーン</li>
+          <li>· 雑誌のような余白と整列</li>
+          <li>· FVは静止画</li>
+          <li>· 落ち着き・タイムレス重視</li>
+        </ul>
+        <div class="btn">
+          <span>開く</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Pattern B -->
+    <a href="index-b.html" target="_blank" class="card block bg-white border" style="border-color:var(--amber)">
+      <div class="aspect-[4/3] overflow-hidden relative bg-white">
+        <iframe src="index-b.html" class="w-[200%] h-[200%] origin-top-left" style="transform:scale(0.5); border:0;" loading="lazy" sandbox="allow-same-origin"></iframe>
+      </div>
+      <div class="p-7 md:p-9">
+        <div class="font-en-label text-[10px] text-amber mb-3">— Pattern B / Recommended</div>
+        <h2 class="font-mincho text-xl md:text-2xl mb-4 leading-snug">
+          White Cinema<br><span class="font-italic text-sm" style="color:var(--amber)">— 白×シネマ</span>
+        </h2>
+        <ul class="text-xs leading-[2] text-stone mb-6">
+          <li>· ベース：純白（#FFFFFF）</li>
+          <li>· アクセント：ディープアンバー（夕日色）</li>
+          <li>· <strong>FV は AI 生成 5秒×4 動画ループ</strong></li>
+          <li>· Numbers と Footer は黒で締める</li>
+          <li>· 明るさ・清潔感・劇場感のハイブリッド</li>
+        </ul>
+        <div class="btn amber">
+          <span>開く</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Pattern B-dark -->
+    <a href="index-b-dark.html" target="_blank" class="card block border" style="background:#14110D; border-color:#3A332A; color:#E8DFCB;">
+      <div class="aspect-[4/3] overflow-hidden relative bg-[#14110D]">
+        <iframe src="index-b-dark.html" class="w-[200%] h-[200%] origin-top-left" style="transform:scale(0.5); border:0;" loading="lazy" sandbox="allow-same-origin"></iframe>
+      </div>
+      <div class="p-7 md:p-9">
+        <div class="font-en-label text-[10px] mb-3" style="color:#C4A572">— Pattern B-dark</div>
+        <h2 class="font-mincho text-xl md:text-2xl mb-4 leading-snug" style="color:#E8DFCB">
+          Cinematic Twilight<br><span class="font-italic text-sm" style="color:#CFC6B0">— 暗×シネマ</span>
+        </h2>
+        <ul class="text-xs leading-[2] mb-6" style="color:#CFC6B0">
+          <li>· ベース：深い黒（#14110D）</li>
+          <li>· アクセント：アンバー</li>
+          <li>· FV は AI 生成 5秒×4 動画ループ</li>
+          <li>· Numbers だけ白で反転</li>
+          <li>· 映画館の暗さ・没入感重視</li>
+        </ul>
+        <div class="btn" style="color:#E8DFCB; border-color:#E8DFCB;">
+          <span>開く</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Footer note -->
+  <div class="mt-20 md:mt-28 pt-10 border-t" style="border-color:var(--line)">
+    <div class="grid md:grid-cols-2 gap-10">
+      <div>
+        <div class="font-en-label text-[10px] text-amber mb-3">— Studio note</div>
+        <p class="text-sm leading-[2] text-stone max-w-xl">
+          いずれのパターンも、写真と数字とコピーはすべて仮置きです。
+          明日のヒアリングで「人」「実績」「対応のはやさ」の中身が決まれば、
+          どのパターンでも具体に置き換えていけます。
+        </p>
+      </div>
+      <div>
+        <div class="font-en-label text-[10px] text-amber mb-3">— Files</div>
+        <ul class="text-xs leading-[2] text-stone font-mono">
+          <li>mockup/index.html — Pattern A</li>
+          <li>mockup/index-b.html — Pattern B (white)</li>
+          <li>mockup/index-b-dark.html — Pattern B-dark</li>
+          <li>mockup/view.html — このページ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-12 text-[10px] text-stone-soft font-en-label">© AROUND Inc. · Mockup by AI Company · 2026</div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>仲間たち — AROUND</title>
+<meta name="description" content="株式会社AROUND の社長 長井祐一と、現場をともに支える仲間たち。">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Sans+JP:wght@200;300;400;500;700&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          canvas: '#FFFFFF', 'canvas-soft': '#F7F4ED', 'canvas-deep': '#EFEADD',
+          ink: '#1A1A18', 'ink-soft': '#2C2A26',
+          bone: '#E8DFCB', 'bone-soft': '#CFC6B0',
+          amber: '#3F5840', 'amber-bright': '#95B089',
+          stone: '#6E6B62', 'stone-soft': '#98948A',
+          line: '#DDD6C5',
+        },
+        fontFamily: {
+          mincho: ['"Shippori Mincho B1"', 'serif'],
+          display: ['"Cormorant Garamond"', 'serif'],
+          sans: ['"Noto Sans JP"', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root { --canvas: #FFFFFF; --canvas-soft: #F7F4ED; --canvas-deep: #EFEADD; --ink: #1A1A18; --ink-soft: #2C2A26; --bone: #E8DFCB; --bone-soft: #CFC6B0; --amber: #3F5840; --amber-bright: #95B089; --stone: #6E6B62; --stone-soft: #98948A; --line: #DDD6C5; }
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html { background: var(--canvas); color: var(--ink); scroll-behavior: smooth; overflow-x: hidden; scrollbar-gutter: stable; }
+  body { font-family: "Noto Sans JP", sans-serif; font-weight: 300; letter-spacing: 0.02em; line-height: 1.8; background: var(--canvas); color: var(--ink); overflow-x: hidden; max-width: 100%; }
+  .font-mincho { font-family: "Shippori Mincho B1", serif; }
+  .font-display { font-family: "Cormorant Garamond", serif; letter-spacing: 0.04em; }
+  .font-italic { font-family: "Cormorant Garamond", serif; font-style: italic; letter-spacing: 0.04em; }
+  .font-en-label { font-family: "Cormorant Garamond", serif; letter-spacing: 0.4em; text-transform: uppercase; font-weight: 400; }
+  .hairline { background: var(--line); height: 1px; width: 100%; }
+  .hairline-amber { background: var(--amber); height: 1px; width: 100%; opacity: 0.65; }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1.6s cubic-bezier(.22,.61,.36,1), transform 1.6s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .d-1 { transition-delay: 0.15s; } .d-2 { transition-delay: 0.3s; } .d-3 { transition-delay: 0.45s; }
+  .ph-img-warm { filter: brightness(0.98) saturate(0.95) contrast(1.03) sepia(0.06); }
+  .photo-hover { overflow: hidden; }
+  .photo-hover .inner { transition: transform 2.4s cubic-bezier(.22,.61,.36,1), filter 1.2s ease; }
+  .photo-hover:hover .inner { transform: scale(1.06); }
+  .photo { background-color: #e8e3d5; background-size: cover; background-position: center; display: block; }
+  .btn-line { display: inline-flex; align-items: center; gap: 16px; padding: 16px 32px; border: 1px solid currentColor; font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; transition: background 0.6s ease, color 0.6s ease; font-family: "Cormorant Garamond", serif; }
+  .btn-line .arrow { display: inline-block; transition: transform 0.6s cubic-bezier(.22,.61,.36,1); }
+  .btn-line:hover { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+  .btn-line:hover .arrow { transform: translateX(10px); }
+  .btn-line.amber { color: var(--amber); border-color: var(--amber); }
+  .btn-line.amber:hover { background: var(--amber); color: var(--canvas); border-color: var(--amber); }
+  .link-under { position: relative; display: inline-block; }
+  .link-under::after { content: ''; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px; background: currentColor; transform-origin: right; transform: scaleX(1); transition: transform 0.6s ease; }
+  .link-under:hover::after { transform-origin: left; transform: scaleX(0); animation: linkRedraw 1.4s ease forwards; }
+  @keyframes linkRedraw { 50% { transform-origin: right; transform: scaleX(0); } 50.01% { transform-origin: left; transform: scaleX(0); } 100% { transform-origin: left; transform: scaleX(1); } }
+  .nav-solid { background: rgba(255,255,255,0.92); backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px); border-bottom: 1px solid var(--line); }
+  .qmark { font-family: "Cormorant Garamond", serif; font-weight: 300; color: var(--amber); line-height: 0.8; opacity: 0.5; }
+  ::selection { background: var(--amber); color: var(--canvas); }
+  body::before { content: ''; position: fixed; inset: 0; pointer-events: none; opacity: 0.02; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: multiply; z-index: 999; }
+  @media (max-width: 768px) { .md-only { display: none; } }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-40 nav-solid">
+  <div class="px-6 md:px-10 py-5 md:py-6 flex items-center justify-between">
+    <a href="./index-b.html" class="flex items-baseline gap-3">
+      <span class="font-display text-xl md:text-[22px] tracking-[0.36em] font-medium text-ink">AROUND</span>
+      <span class="font-italic text-[11px] text-stone hidden md:inline">— Matsusaka, Mie</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9 text-[11px] font-en-label">
+      <a href="./index-b.html#philosophy" class="link-under text-ink">Philosophy</a>
+      <a href="./works.html" class="link-under text-ink">Works</a>
+      <a href="./people.html" class="link-under text-amber font-medium">People</a>
+      <a href="./voice.html" class="link-under text-ink">Voice</a>
+      <a href="./flow.html" class="link-under text-ink">Flow</a>
+      <a href="./index-b.html#area" class="link-under text-ink">Area</a>
+      <a href="./index-b.html#contact" class="link-under text-ink">Contact</a>
+    </nav>
+    <a href="./index-b.html#contact" class="btn-line amber">
+      <span class="font-en-label">無料相談</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="pt-32 md:pt-44 pb-16 md:pb-24 px-6 md:px-10 bg-canvas">
+  <div class="max-w-[1500px] mx-auto">
+    <div class="reveal max-w-4xl">
+      <div class="font-en-label text-[12px] text-amber mb-6">— People / 仲間たち</div>
+      <h1 class="font-mincho text-[40px] md:text-[64px] lg:text-[80px] leading-[1.25] font-light text-ink">
+        この仕事を、誰が、<br>
+        <span class="font-italic text-amber">— どうして</span>、やっているのか。
+      </h1>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS — 4 metrics -->
+<section class="py-24 md:py-32 px-6 md:px-10 bg-ink text-bone">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="reveal mb-16 md:mb-20 max-w-3xl">
+      <div class="font-en-label text-[10px] text-amber-bright mb-5">— By the Numbers</div>
+      <h2 class="font-mincho text-[28px] md:text-4xl lg:text-5xl leading-[1.4] font-light text-bone">
+        言葉ではなく、<br>
+        <span class="font-italic text-amber-bright">— 数字</span>で、語れること。
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-x-0 gap-y-12 md:gap-y-0 md:divide-x divide-stone-soft/30">
+
+      <div class="reveal md:px-10">
+        <div class="font-en-label text-[12px] text-stone-soft mb-5">創業</div>
+        <div class="font-display font-light text-[72px] md:text-[120px] leading-[0.85] tracking-tight text-amber-bright">10<span class="text-3xl md:text-4xl ml-2 text-stone-soft">年</span></div>
+        <div class="mt-6 text-[13px] text-stone-soft leading-[1.8]">2016年創業、<br>三重県松阪市から</div>
+      </div>
+
+      <div class="reveal d-1 md:px-10">
+        <div class="font-en-label text-[12px] text-stone-soft mb-5">年間施工</div>
+        <div class="font-display font-light text-[72px] md:text-[120px] leading-[0.85] tracking-tight text-amber-bright">20<span class="text-3xl md:text-4xl ml-2 text-stone-soft">件</span></div>
+        <div class="mt-6 text-[13px] text-stone-soft leading-[1.8]">数を追わず、<br>一件ずつ丁寧に</div>
+      </div>
+
+      <div class="reveal d-2 md:px-10">
+        <div class="font-en-label text-[12px] text-stone-soft mb-5">ご紹介</div>
+        <div class="font-display font-light text-[72px] md:text-[120px] leading-[0.85] tracking-tight text-amber-bright">60<span class="text-3xl md:text-4xl ml-2 text-stone-soft">%</span></div>
+        <div class="mt-6 text-[13px] text-stone-soft leading-[1.8]">お客様からの<br>ご紹介で出会う</div>
+      </div>
+
+      <div class="reveal d-2 md:px-10">
+        <div class="font-en-label text-[12px] text-stone-soft mb-5">初回返信</div>
+        <div class="font-display font-light text-[72px] md:text-[120px] leading-[0.85] tracking-tight text-amber-bright">24<span class="text-3xl md:text-4xl ml-2 text-stone-soft">h以内</span></div>
+        <div class="mt-6 text-[13px] text-stone-soft leading-[1.8]">ご連絡をいただいたら<br>必ず24時間以内に</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="pb-32 md:pb-48 pt-32 md:pt-44 px-6 md:px-10 bg-canvas">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="grid md:grid-cols-12 gap-10 md:gap-20 items-stretch border-t border-line pt-12 md:pt-16">
+      <div class="md:col-span-5 reveal">
+        <div class="photo-hover">
+          <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/founder.png'); background-position: center 20%;"></div>
+        </div>
+        <div class="mt-6">
+          <div class="font-en-label text-[12px] text-amber mb-2">— Founder · Representative</div>
+          <div class="font-mincho text-2xl md:text-3xl text-ink mb-1">代表  長井 祐一</div>
+          <div class="font-italic text-stone text-sm">Yuichi Nagai · CEO</div>
+        </div>
+      </div>
+      <div class="md:col-span-7 reveal d-1 flex flex-col justify-center">
+        <div class="qmark text-[160px] md:text-[200px] -mb-16 -ml-3">"</div>
+        <div class="font-mincho text-lg md:text-xl leading-[2.2] font-light text-ink space-y-8">
+          <p class="font-mincho text-2xl md:text-3xl leading-[1.8] text-ink">私は、三重県で生まれ育ちました。</p>
+          <p>家を建てるとき、暮らしの「まわり」のこと — 外構、植栽、駐車スペース、土地の使い方 — は、お客様にとって、とても不安なものだと思います。<br>「相場がわからない」「失敗したらと思うと、踏み出せない」。そういうご相談を、私たちは10年間、お聞きしてきました。</p>
+          <p>だから AROUND は、<strong class="text-ink font-mincho">一から、ぜんぶ、お任せいただける場所</strong>でありたい。<br>最初のお話から、設計・施工・引き渡し、その後のお手入れまで。仲間と一緒に、ひとつひとつ、誠意を込めて。</p>
+          <p>おかげさまで創業から10年、新しくお会いするお客様の <strong class="text-ink font-mincho">6割は、既存のお客様からのご紹介</strong> で来てくださいます。<br>そのご縁の連なりが、私たちの一番の財産です。</p>
+          <p>外構という仕事を通じて、生まれ育った <strong class="text-ink font-mincho">三重・愛知・岐阜の街並み</strong> を、ほんの少しでも、豊かに。お客様の暮らしの未来を、共につくっていけたら。</p>
+          <p>楽しさと、真剣さと。両方を持ったお客様と、これからも一緒に。<br>そして、その想いに共感してくれる新しい仲間も、これから迎えていきます。お客様も、これから外構の世界に入りたい方も、お気軽にお声がけください。</p>
+        </div>
+        <div class="hairline-amber w-20 mt-12 mb-6"></div>
+        <div class="font-italic text-stone text-sm">— 株式会社 AROUND  代表  長井 祐一</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STAFF -->
+<section class="py-32 md:py-44 px-6 md:px-10 bg-canvas-soft">
+  <div class="max-w-[1500px] mx-auto">
+
+    <div class="flex items-baseline justify-between mb-12 md:mb-16 reveal">
+      <div>
+        <div class="font-en-label text-[12px] text-amber mb-3">— Members</div>
+        <h2 class="font-mincho text-3xl md:text-5xl font-light text-ink">仲間たち、4人。</h2>
+      </div>
+      <div class="font-italic text-stone text-sm hidden md:block max-w-xs text-right">綺麗な仕事を、ひとつひとつ。<br>仲のいいチームです。</div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 md:gap-x-16 gap-y-16 md:gap-y-20">
+
+      <article class="reveal flex gap-6 md:gap-8 items-start">
+        <div class="w-40 md:w-56 shrink-0">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/sato.png'); background-position: center 25%;"></div>
+          </div>
+        </div>
+        <div class="flex-1 pt-2">
+          <div class="font-en-label text-[10px] text-amber mb-2">Member · 01</div>
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">佐藤</h3>
+          <div class="space-y-1 text-[13px] text-stone mb-4">
+            <div>年代 — 20代</div>
+            <div>経験 — 5年</div>
+          </div>
+          <div class="hairline-amber w-12 mb-4 opacity-60"></div>
+          <p class="text-[13px] leading-[2] text-ink-soft font-mincho">綺麗な現場を心がけています。<br>「家のまわりが、毎日少しずつ美しくなる」のが楽しみ。</p>
+        </div>
+      </article>
+
+      <article class="reveal d-1 flex gap-6 md:gap-8 items-start">
+        <div class="w-40 md:w-56 shrink-0">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/tanaka.png'); background-position: center 25%;"></div>
+          </div>
+        </div>
+        <div class="flex-1 pt-2">
+          <div class="font-en-label text-[10px] text-amber mb-2">Member · 02</div>
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">田中</h3>
+          <div class="space-y-1 text-[13px] text-stone mb-4">
+            <div>年代 — 40代</div>
+            <div>経験 — 15年</div>
+          </div>
+          <div class="hairline-amber w-12 mb-4 opacity-60"></div>
+          <p class="text-[13px] leading-[2] text-ink-soft font-mincho">綺麗な現場を心がけています。<br>15年やってきた今でも、毎現場が新しい発見の連続です。</p>
+        </div>
+      </article>
+
+      <article class="reveal d-2 flex gap-6 md:gap-8 items-start">
+        <div class="w-40 md:w-56 shrink-0">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/suzuki.png'); background-position: center 25%;"></div>
+          </div>
+        </div>
+        <div class="flex-1 pt-2">
+          <div class="font-en-label text-[10px] text-amber mb-2">Member · 03</div>
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">鈴木</h3>
+          <div class="space-y-1 text-[13px] text-stone mb-4">
+            <div>年代 — 20代</div>
+            <div>経験 — 3年</div>
+          </div>
+          <div class="hairline-amber w-12 mb-4 opacity-60"></div>
+          <p class="text-[13px] leading-[2] text-ink-soft font-mincho">綺麗な現場を心がけています。<br>先輩の手元を見ながら、ひとつひとつ覚えている最中です。</p>
+        </div>
+      </article>
+
+      <article class="reveal d-3 flex gap-6 md:gap-8 items-start">
+        <div class="w-40 md:w-56 shrink-0">
+          <div class="photo-hover">
+            <div class="inner photo aspect-[4/5] ph-img-warm" style="background-image:url('./staff/tamura.png'); background-position: center 25%;"></div>
+          </div>
+        </div>
+        <div class="flex-1 pt-2">
+          <div class="font-en-label text-[10px] text-amber mb-2">Member · 04</div>
+          <h3 class="font-mincho text-2xl md:text-3xl text-ink mb-3">田村</h3>
+          <div class="space-y-1 text-[13px] text-stone mb-4">
+            <div>年代 — 30代</div>
+            <div>経験 — 10年</div>
+          </div>
+          <div class="hairline-amber w-12 mb-4 opacity-60"></div>
+          <p class="text-[13px] leading-[2] text-ink-soft font-mincho">綺麗な現場を心がけています。<br>近隣の方への挨拶や養生まで、ぜんぶ仕事の一部です。</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 md:py-28 px-6 md:px-10 bg-ink text-bone">
+  <div class="max-w-[1200px] mx-auto text-center">
+    <div class="reveal">
+      <div class="font-en-label text-[12px] text-amber-bright mb-6">— Join us</div>
+      <h2 class="font-mincho text-[28px] md:text-4xl lg:text-5xl leading-[1.4] font-light text-bone mb-6">
+        新しい仲間も、<br class="md:hidden">これから迎えていきます。
+      </h2>
+      <p class="font-mincho text-base md:text-lg text-bone-soft leading-[2] mb-12 max-w-2xl mx-auto">
+        外構の世界に入りたい方、お話だけでも歓迎です。<br>
+        お気軽にお問い合わせください。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+        <a href="./index-b.html#contact" class="btn-line on-dark" style="padding:18px 36px; font-size:12px;">
+          <span>お問い合わせ</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-bone pt-24 md:pt-28 pb-10 px-6 md:px-10">
+  <div class="max-w-[1500px] mx-auto">
+    <div class="text-center mb-16 reveal">
+      <div class="font-en-label text-[10px] text-amber-bright mb-6">— Around / Matsusaka, Mie</div>
+      <div class="font-display text-5xl md:text-7xl tracking-[0.32em] font-light text-bone">AROUND</div>
+    </div>
+    <div class="hairline-amber mb-12"></div>
+    <div class="grid md:grid-cols-12 gap-10 mb-16">
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-4">— Studio</div>
+        <div class="text-sm leading-[2] text-bone-soft">
+          株式会社 AROUND<br>
+          〒515-2356 三重県松阪市嬉野上野町 1183-1<br>
+          TEL: 0598-30-5033<br>
+          8:00 – 17:00 / 日曜定休
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-4">— Navigate</div>
+        <div class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+          <a href="./index-b.html" class="link-under text-bone-soft hover:text-bone">Top</a>
+          <a href="./works.html" class="link-under text-bone-soft hover:text-bone">Works</a>
+          <a href="./people.html" class="link-under text-bone-soft hover:text-bone">People</a>
+          <a href="./voice.html" class="link-under text-bone-soft hover:text-bone">Voice</a>
+          <a href="./flow.html" class="link-under text-bone-soft hover:text-bone">Flow</a>
+          <a href="./index-b.html#area" class="link-under text-bone-soft hover:text-bone">Area</a>
+          <a href="./index-b.html#contact" class="link-under text-bone-soft hover:text-bone">Contact</a>
+        </div>
+      </div>
+      <div class="md:col-span-4">
+        <div class="font-en-label text-[10px] text-amber-bright mb-4">— Social</div>
+        <ul class="space-y-3 text-sm">
+          <li><a href="https://instagram.com/around_mie_119" target="_blank" rel="noopener" class="link-under text-bone-soft hover:text-bone">Instagram · @around_mie_119</a></li>
+          <li><a href="#" class="link-under text-bone-soft hover:text-bone">LINE Official</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hairline mb-6" style="background:rgba(232,223,203,0.2)"></div>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 text-[10px] text-stone-soft font-en-label">
+      <div>© 2026 AROUND Inc. All rights reserved.</div>
+      <div>— Matsusaka, Mie, Japan</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
