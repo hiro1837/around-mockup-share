@@ -73,8 +73,8 @@
   .nav-solid { background: rgba(255,255,255,0.92); backdrop-filter: saturate(140%) blur(14px); -webkit-backdrop-filter: saturate(140%) blur(14px); border-bottom: 1px solid var(--line); }
   ::selection { background: var(--amber); color: var(--canvas); }
   .qmark { font-family: "Cormorant Garamond", serif; font-weight: 300; color: var(--amber); line-height: 0.8; opacity: 0.5; }
-  .stars-row { display: inline-flex; align-items: center; gap: 0.5em; font-size: 38px; line-height: 1; color: #FFC629; text-shadow: 0 0 14px rgba(255,198,41,0.6), 0 0 30px rgba(255,198,41,0.35), 0 2px 4px rgba(0,0,0,0.08); }
-  @media (min-width: 768px) { .stars-row { font-size: 56px; gap: 0.55em; } }
+  .stars-row { display: inline-flex; align-items: center; gap: 0.35em; font-size: 24px; line-height: 1; color: #FFC629; text-shadow: 0 0 10px rgba(255,198,41,0.45), 0 2px 4px rgba(0,0,0,0.08); }
+  @media (min-width: 768px) { .stars-row { font-size: 32px; gap: 0.4em; } }
   .stars-row > span { display: inline-block; }
 </style>
 </head>
@@ -124,52 +124,52 @@
 <section class="pb-32 md:pb-48 px-6 md:px-10 bg-canvas">
   <div class="max-w-[1500px] mx-auto">
 
-    <div class="grid md:grid-cols-3 gap-12 md:gap-16">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-14 items-stretch">
 
-      <div class="reveal">
-        <div class="photo aspect-square ph-img-warm mb-8 max-w-[200px]" style="background-image:url('./voice/voice-1-nakamura.png'); background-position: center 18%;"></div>
-        <div class="qmark text-8xl md:text-9xl leading-[0.6] mb-2">「</div>
-        <p class="font-mincho text-lg md:text-xl leading-[2.2] mb-6 text-ink">
+      <div class="reveal flex flex-col">
+        <div class="photo aspect-square ph-img-warm mb-5 max-w-[140px] md:max-w-[160px]" style="background-image:url('./voice/voice-1-nakamura.png'); background-position: center 18%;"></div>
+        <div class="qmark text-6xl md:text-8xl leading-[0.6] mb-2">「</div>
+        <p class="font-mincho text-base md:text-lg leading-[1.9] mb-5 text-ink flex-grow">
           初めて アラウンドさんに お願いしましたが、<br>
           とても良かったです。
         </p>
-        <div class="stars-row mb-8" aria-label="星5つ"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div class="hairline-amber w-12 mb-5"></div>
-        <div class="text-[13px] text-stone leading-relaxed">
-          <div class="font-mincho text-base text-ink mb-1">— 中村 様</div>
-          <div class="font-en-label text-amber">Matsusaka · 新築一戸建て · 2025</div>
+        <div class="stars-row mb-5" aria-label="星5つ"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="hairline-amber w-10 mb-4"></div>
+        <div class="text-[12px] text-stone leading-relaxed">
+          <div class="font-mincho text-sm text-ink mb-1">— 中村 様</div>
+          <div class="font-en-label text-amber text-[10px]">Matsusaka · 新築一戸建て · 2025</div>
         </div>
       </div>
 
-      <div class="reveal d-1">
-        <div class="photo aspect-square ph-img-warm mb-8 max-w-[200px]" style="background-image:url('./voice/voice-2-h.png'); background-position: center 20%;"></div>
-        <div class="qmark text-8xl md:text-9xl leading-[0.6] mb-2">「</div>
-        <p class="font-mincho text-lg md:text-xl leading-[2.2] mb-6 text-ink">
+      <div class="reveal d-1 flex flex-col">
+        <div class="photo aspect-square ph-img-warm mb-5 max-w-[140px] md:max-w-[160px]" style="background-image:url('./voice/voice-2-h.png'); background-position: center 20%;"></div>
+        <div class="qmark text-6xl md:text-8xl leading-[0.6] mb-2">「</div>
+        <p class="font-mincho text-base md:text-lg leading-[1.9] mb-5 text-ink flex-grow">
           まずはとにかく、社長さんがいい人でした。<br>
           こちらの話を最後まで聴いてくれて、押し付けてこない。<br>
           スタッフのみなさんも、同じ空気で安心できました。
         </p>
-        <div class="stars-row mb-8" aria-label="星5つ"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div class="hairline-amber w-12 mb-5"></div>
-        <div class="text-[13px] text-stone leading-relaxed">
-          <div class="font-mincho text-base text-ink mb-1">— H 様（友人からのご紹介）</div>
-          <div class="font-en-label text-amber">Tsu · 新築一戸建て · 2024</div>
+        <div class="stars-row mb-5" aria-label="星5つ"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="hairline-amber w-10 mb-4"></div>
+        <div class="text-[12px] text-stone leading-relaxed">
+          <div class="font-mincho text-sm text-ink mb-1">— H 様（友人からのご紹介）</div>
+          <div class="font-en-label text-amber text-[10px]">Tsu · 新築一戸建て · 2024</div>
         </div>
       </div>
 
-      <div class="reveal d-2">
-        <div class="photo aspect-square ph-img-warm mb-8 max-w-[200px]" style="background-image:url('./voice/voice-3-s.png'); background-position: center 22%;"></div>
-        <div class="qmark text-8xl md:text-9xl leading-[0.6] mb-2">「</div>
-        <p class="font-mincho text-lg md:text-xl leading-[2.2] mb-6 text-ink">
+      <div class="reveal d-2 flex flex-col">
+        <div class="photo aspect-square ph-img-warm mb-5 max-w-[140px] md:max-w-[160px]" style="background-image:url('./voice/voice-3-s.png'); background-position: center 22%;"></div>
+        <div class="qmark text-6xl md:text-8xl leading-[0.6] mb-2">「</div>
+        <p class="font-mincho text-base md:text-lg leading-[1.9] mb-5 text-ink flex-grow">
           対応が、ほんとに最高です。<br>
           LINEで送った写真にもすぐに返事をくれる。<br>
           工事中の現場も毎日きれいで、終わったあとも気にかけてくれます。
         </p>
-        <div class="stars-row mb-8" aria-label="星5つ"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div class="hairline-amber w-12 mb-5"></div>
-        <div class="text-[13px] text-stone leading-relaxed">
-          <div class="font-mincho text-base text-ink mb-1">— S 様（リピート）</div>
-          <div class="font-en-label text-amber">Nagoya · リフォーム · 2024</div>
+        <div class="stars-row mb-5" aria-label="星5つ"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="hairline-amber w-10 mb-4"></div>
+        <div class="text-[12px] text-stone leading-relaxed">
+          <div class="font-mincho text-sm text-ink mb-1">— S 様（リピート）</div>
+          <div class="font-en-label text-amber text-[10px]">Nagoya · リフォーム · 2024</div>
         </div>
       </div>
 
